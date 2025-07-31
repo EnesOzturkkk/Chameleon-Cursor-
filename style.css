@@ -1,0 +1,39 @@
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    cursor: pointer; /* Fare imlecini gizlemeye gerek yok, sabit olacak */
+    background: linear-gradient(300deg, #eaffd3, #eaffd3 ,#f6f2f0, #f1ffed, #eaffd3);
+    background-size: 180% 180%;
+    animation: gradient-animation 3s ease infinite;
+}
+
+
+#chameleon {
+    width: 140px;
+    position: absolute;
+    pointer-events: none;
+
+    left: 50%; /* Sayfanın yatay ortası */
+    top: 50%;  /* Sayfanın dikey ortası */
+
+    /* Merkezi hizalamayı koru ve başlangıçta dönme yok */
+    transform: translate(-50%, -50%) rotate(0deg); 
+    
+    transition: transform 0.1s linear; /* Yumuşak dönüş için */
+    transform-origin: center center; /* Dönüşümün kendi merkezi etrafında olmasını sağlar */
+}
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
